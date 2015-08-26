@@ -54,19 +54,19 @@ class BootstrapFormExtension extends \Twig_Extension
             new \Twig_SimpleFunction('bootstrap_get_simple_col', array($this, 'getSimpleCol')),
             new \Twig_SimpleFunction('bootstrap_backup_form_settings', array($this, 'backupFormSettings')),
             new \Twig_SimpleFunction('bootstrap_restore_form_settings', array($this, 'restoreFormSettings')),
-            'checkbox_row'  => new \Twig_SimpleFunction(
+            'checkbox_row'  => new \Twig_Function_Node(
                 'Symfony\Bridge\Twig\Node\SearchAndRenderBlockNode',
                 array('is_safe' => array('html'))
             ),
-            'radio_row'  => new \Twig_SimpleFunction(
+            'radio_row'  => new \Twig_Function_Node(
                 'Symfony\Bridge\Twig\Node\SearchAndRenderBlockNode',
                 array('is_safe' => array('html'))
             ),
-            'global_form_errors'  => new \Twig_SimpleFunction(
+            'global_form_errors'  => new \Twig_Function_Node(
                 'Symfony\Bridge\Twig\Node\SearchAndRenderBlockNode',
                 array('is_safe' => array('html'))
             ),
-            'form_control_static'   => new \Twig_SimpleFilter(
+            'form_control_static'   => new \Twig_Function_Method(
                 $this,
                 'formControlStaticFunction',
                 array('is_safe' => array('html'))
